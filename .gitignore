@@ -12,3 +12,4 @@ tokens
 softhsm2.conf
 tokens
 *.log
+*.orig

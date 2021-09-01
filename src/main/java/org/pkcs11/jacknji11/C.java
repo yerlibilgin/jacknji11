@@ -81,7 +81,7 @@ public class C {
         if (lib == null || lib.length() == 0) {
             lib = "cryptoki";
         }
-        log.debug("Loading native library " + lib);
+        LOGGER.debug("Loading native library " + lib);
         return lib;
     }
 

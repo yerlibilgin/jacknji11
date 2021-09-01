@@ -32,7 +32,7 @@ export JACKNJI11_TEST_USER_PIN=userpin
 
 The tests rely on a library named libcryptoki.so being available on the `LD_LIBRARY_PATH`. But you can use an alternate library as described in the following section.
 
-## Providing alternate cryptoki dll
+## Providing alternate cryptoki library
 The `CE` and `C` classes provide `Initialize()` and `Initialize(String)` functions. The first function does not take a cryptoki library path, but the second one takes a cryptoki library path. If you want to provide an alternate pkcs11 library, you have two choices:
   1. Use the `JACKNJI11_PKCS11_LIB_PATH` environment variable to set the absolute path of the library. For example: 
 

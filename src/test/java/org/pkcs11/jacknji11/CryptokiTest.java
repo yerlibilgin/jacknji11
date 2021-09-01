@@ -309,7 +309,7 @@ public class CryptokiTest extends TestCase {
         // in the P11 spec. To work with as many HSMs as possible, use a good default, as complete as possible, template.
         // On most HSMs you can set CKA_ID after key generations, but some requires adding CKA_ID at generation time
         CKA[] pubTempl = new CKA[] {
-            new CKA(CKA.MODULUS_BITS, 1024),
+            new CKA(CKA.MODULUS_BITS, 2048),
             new CKA(CKA.PUBLIC_EXPONENT, Hex.s2b("010001")),
             new CKA(CKA.WRAP, false),
             new CKA(CKA.ENCRYPT, false),
@@ -337,7 +337,7 @@ public class CryptokiTest extends TestCase {
         byte[] data = new byte[100];
         CE.SignInit(session, new CKM(CKM.SHA256_RSA_PKCS), privKey.value());
         byte[] sig1 = CE.Sign(session, data);
-        assertEquals(128, sig1.length);
+        assertEquals(256, sig1.length);
 
         CE.VerifyInit(session, new CKM(CKM.SHA256_RSA_PKCS), pubKey.value());
         CE.Verify(session, data, sig1);
@@ -356,7 +356,7 @@ public class CryptokiTest extends TestCase {
 
         CE.VerifyInit(session, new CKM(CKM.SHA256_RSA_PKCS), pubKey.value());
         try {
-            CE.Verify(session, data, new byte[128]);
+            CE.Verify(session, data, new byte[256]);
             fail("CE Verify with no real signature should throw exception");
         } catch (CKRException e) {
             assertEquals("Failure with invalid signature data should be CKR.SIGNATURE_INVALID", CKR.SIGNATURE_INVALID, e.getCKR());

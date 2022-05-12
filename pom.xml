@@ -5,17 +5,17 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.pkcs11</groupId>
-  <artifactId>jacknji11</artifactId>
-  <version>1.2-SNAPSHOT</version>
-  <name>jacknji11</name>
+  <artifactId>jacknji11-kys</artifactId>
+  <version>1.2</version>
   <packaging>jar</packaging>
 
   <inceptionYear>2010</inceptionYear>
 
   <description>
     Java Native Interface for PKCS#11
+    Forked from https://github.com/joelhockey/jacknji11
   </description>
-  <url>https://github.com/joelhockey/jacknji11</url>
+  <url>https://github.com/yerlibilgin/jacknji11</url>
 
   <licenses>
     <license>
@@ -30,6 +30,11 @@
       <email>joel.hockey@gmail.com</email>
       <organizationUrl>https://github.com/joelhockey/jacknji11</organizationUrl>
     </developer>
+    <developer>
+      <name>Muhammet Yıldız</name>
+      <email>myildiz83@gmail.com</email>
+      <organizationUrl>https://github.com/yerlibilgin</organizationUrl>
+    </developer>
   </developers>
 
   <properties>
@@ -40,9 +45,9 @@
 
 
   <scm>
-    <connection>scm:git:https://github.com/joelhockey/jacknji11.git</connection>
-    <developerConnection>scm:git:git@github.com:joelhockey/jacknji11.git</developerConnection>
-    <url>https://github.com/joelhockey/jacknji11</url>
+    <connection>scm:git:https://github.com/yerlibilgin/jacknji11.git</connection>
+    <developerConnection>scm:git:git@github.com:yerlibilgin/jacknji11.git</developerConnection>
+    <url>https://github.com/yerlibilgin/jacknji11</url>
   </scm>
 
   <build>
@@ -64,33 +69,29 @@
     <dependency>
       <groupId>net.java.dev.jna</groupId>
       <artifactId>jna</artifactId>
-      <version>5.6.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.jnr</groupId>
-      <artifactId>jnr-ffi</artifactId>
-      <version>0.6.0</version>
+      <version>5.11.0</version>
     </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.7.30</version>
+      <version>1.7.36</version>
     </dependency>
 
     <!-- test -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>1.7.30</version>
+      <version>1.7.36</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
+
 </project>

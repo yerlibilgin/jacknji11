@@ -22,6 +22,7 @@
 package org.pkcs11.jacknji11;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.Map;
 
 import org.slf4j.Logger;
@@ -271,16 +272,20 @@ public class CKA {
 
     /** @return value as Long */
     public Long getValueLong() {
+        byte []tmpVal = pValue;
         if (ulValueLen == 0 || pValue == null) {
             return null;
         }
         if (ulValueLen != ULong.ULONG_SIZE.size()) {
+            if (ulValueLen == 8){
+                tmpVal = Arrays.copyOfRange(tmpVal, 0, 4); //FIXME: hardocoded assumption of endianness
+            } else
             throw new IllegalStateException(
                     String.format(
                         "Method getValueLong called when value is not long type of length %d.  Got length: %d, CKA type: 0x%08x(%s), value: %s",
                         ULong.ULONG_SIZE.size(), ulValueLen, type, CKA.L2S.get(type), Hex.b2s(getValue())));
         }
-        return ULong.b2ulong(getValue());
+        return ULong.b2ulong(tmpVal);
     }
 
     /** @return value as boolean */

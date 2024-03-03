@@ -27,6 +27,8 @@ import junit.framework.TestCase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static org.slf4j.simple.SimpleLogger.DEFAULT_LOG_LEVEL_KEY;
+
 /**
  * JUnit tests for jacknji11.
  * Tests all the cryptoki functions that I have ever used and understand.
@@ -35,7 +37,7 @@ import org.slf4j.LoggerFactory;
  */
 public class CryptokiTest extends TestCase {
     static{
-        System.setProperty(org.slf4j.impl.SimpleLogger.DEFAULT_LOG_LEVEL_KEY, "DEBUG");
+        System.setProperty(DEFAULT_LOG_LEVEL_KEY, "DEBUG");
     }
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CryptokiTest.class);

@@ -5,8 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.pkcs11</groupId>
-  <artifactId>jacknji11-kys</artifactId>
-  <version>1.2</version>
+  <artifactId>jacknji11-ext</artifactId>
+  <version>1.3-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <inceptionYear>2010</inceptionYear>
@@ -75,7 +75,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-      <version>1.7.36</version>
+      <version>2.0.12</version>
     </dependency>
 
     <!-- test -->
@@ -89,7 +89,7 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-simple</artifactId>
-      <version>1.7.36</version>
+      <version>2.0.12</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
